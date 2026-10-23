@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "GMaps Leads",
+  "version": "2.0.0",
+  "description": "Extract names, phones, emails, social media, websites and addresses from Google Maps — Excel, CSV, Google Sheets.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/maps*",
+        "https://www.google.co.ma/maps*",
+        "https://www.google.fr/maps*",
+        "https://www.google.be/maps*",
+        "https://www.google.ca/maps*",
+        "https://www.google.es/maps*",
+        "https://www.google.co.uk/maps*",
+        "https://www.google.ae/maps*",
+        "https://www.google.com.sa/maps*",
+        "https://maps.google.com/*",
+        "https://maps.google.co.ma/*",
+        "https://maps.google.fr/*"
+      ],
+      "js": [
+        "i18n.js",
+        "xlsx.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "GMaps Leads",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root{--bg:#fff;--fg:#1f1f1f;--mut:#5f6368;--sec:#f1f3f4}
+  @media (prefers-color-scheme: dark){:root{--bg:#202124;--fg:#e8eaed;--mut:#9aa0a6;--sec:#35363a}}
+  body{margin:0;width:300px;font-family:"Segoe UI",Roboto,Tahoma,Arial,sans-serif;font-size:13px;color:var(--fg);background:var(--bg)}
+  .hd{background:#1a73e8;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:8px}
+  .hd img{width:22px;height:22px}
+  .hd b{font-size:15px;flex:1}
+  select{border:0;border-radius:6px;padding:3px 4px;font-size:12px}
+  .bd{padding:12px 14px}
+  ol{margin:0 0 10px;padding-inline-start:18px;line-height:1.7}
+  button{width:100%;border:0;border-radius:8px;padding:9px;font-size:13px;font-weight:600;cursor:pointer;margin-top:6px}
+  .go{background:#1a73e8;color:#fff}
+  .sec{background:var(--sec);color:var(--fg)}
+  .muted{color:var(--mut);font-size:12px;margin-top:8px}
+</style>
+</head>
+<body>
+  <div class="hd"><img src="icons/icon48.png" alt=""><b>GMaps Leads</b>
+    <select id="lang"><option value="auto">Auto</option><option value="ar">العربية</option><option value="fr">Français</option><option value="en">English</option></select>
+  </div>
+  <div class="bd">
+    <ol id="steps"></ol>
+    <button class="go" id="open"></button>
+    <button class="sec" id="toggle"></button>
+    <div class="muted" id="info"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
